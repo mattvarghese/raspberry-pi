@@ -1,13 +1,18 @@
 
-CC		= gcc
+MAKE	= make
+CD		= cd
 RM		= rm
-LIBS		= -lwiringPi
+TOGGLELED		= 01-toggleLED/
 
-all: 01toggleLED
-
-01toggleLED: 01toggleLED.c
-	$(CC) 01toggleLED.c -o 01toggleLED $(LIBS)
+all: 
+	@echo 
+	@echo Making $(TOGGLELED)
+	$(CD) $(TOGGLELED); echo ; $(MAKE)
+	@echo
 
 distclean:
-	$(RM) 01toggleLED
+	@echo 
+	@echo Cleaning $(TOGGLELED)
+	$(CD) $(TOGGLELED); echo ; $(MAKE) distclean
+	@echo 
 
